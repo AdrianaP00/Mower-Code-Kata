@@ -1,4 +1,5 @@
 const { mower } = require("../model/mowerModel");
+const { mowerWithCollisionDetection, mowerWithObstacleDetection } = require("../service/plateauService");
 
 // Definition of variables for grid
 const directions = { N: [0, 1], E: [1, 0], S: [0, -1], W: [-1, 0] };
@@ -21,10 +22,26 @@ const moveMower = (instructions, plateau) => {
         break;
     }
   }
-
   return [mower.x, mower.y, mower.direction];
 };
 
+// Function to allow the movement
+const canMove = (dx, dy, plateau) => {
+  if (dx < 0 || dy < 0 || dx >= plateau.x || dy >= plateau.y) {
+    console.error("Mower can't move outside the plateau");
+    return false;
+  } else if (mowerWithCollisionDetection(plateau, dx, dy)) {
+    console.error("Mower can't move on another mower");
+    return false;
+  } else if (mowerWithObstacleDetection(plateau, dx, dy)) {
+    console.error("Mower can't move on Obstacles");
+    return false;
+  } else {
+    return true;
+  }
+};
+
+// Function for checking directions before moving
 const checkAndMove = (plateau) => {
   let [dx, dy] = directions[mower.direction];
   dx = parseInt(mower.x) + parseInt(dx);
@@ -32,15 +49,14 @@ const checkAndMove = (plateau) => {
 
   if (canMove(dx, dy, plateau)) {
     mower.move(dx, dy);
-  }
-};
 
-const canMove = (dx, dy, plateau) => {
-  if (dx > 0 && dy > 0 && dy <= plateau.x && dy <= plateau.y) {
-    return true;
+    return;
   } else {
-    console.error("Mower can't move outside the plateau");
-    return false;
+    console.error(
+      `Mower stopped at position: ${mower.x} ${mower.y} ${mower.direction}`
+    );
+
+    return;
   }
 };
 

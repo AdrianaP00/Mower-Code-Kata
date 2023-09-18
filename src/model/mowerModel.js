@@ -2,7 +2,6 @@ let mower = {
   x: 0,
   y: 0,
   direction: "N",
-  switch: true,
   helixStatus: true,
 
   // Function to turn the mower left
@@ -25,9 +24,18 @@ let mower = {
     }
   },
 
-  // Function to turn the mower right
+   // Function to turn the mower left
   turnRight: function () {
     switch (this.direction) {
+      case "N":
+        this.direction = "W";
+        break;
+      case "E":
+        this.direction = "N";
+        break;
+      case "S":
+        this.direction = "E";
+        break;
       case "N":
         this.direction = "E";
         break;
@@ -51,21 +59,12 @@ let mower = {
     this.y = dy;
   },
 
-  turnOff: function () {
-    this.switch = false;
-    console.log("Mower is off.");
-  },
-
-  turnOn: function () {
-    this.switch = true;
-    console.log("Mower is on.");
-  },
-
+// Function to turn off the helix
   helixOff: function () {
     this.helixStatus = false;
     console.log("Helix is off.");
   },
-
+// Function to turn on the helix
   helixOn: function () {
     this.helixStatus = true;
     console.log("Helix is on.");
