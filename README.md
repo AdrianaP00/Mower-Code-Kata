@@ -56,7 +56,7 @@ Output Test Case #2:
 ```
 </details>
 
-## Project structure
+## Project architecture
 ![Example](.github/img/tree.png)
 
 
