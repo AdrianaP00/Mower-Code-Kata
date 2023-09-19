@@ -101,6 +101,9 @@ Output Test Case #2:
 
 ![Example](.github/img/output.png)
 
+## Discover more about this project in my SOLUTION.md :boom:
+[CLICK ME!](https://github.com/AdrianaP00/Seat-Code-Kata/blob/main/SOLUTION.md)
+
 [MIT](https://choosealicense.com/licenses/mit/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
