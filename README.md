@@ -2,7 +2,6 @@
 
 # Seat-Code-Kata
 
-
 ## Instructions
 
 <details>
@@ -41,6 +40,7 @@ to move until the first one has finished moving.
 The output for each mower should be its final coordinates and heading.
 
 Input Test Case #1:
+
 ```
 5 5
 1 2 N
@@ -50,39 +50,43 @@ MMRMMRMRRM
 ```
 
 Output Test Case #2:
+
 ```
 1 3 N
 5 1 E
 ```
+
 </details>
 
 ## Project architecture
+
 ![Example](.github/img/tree.png)
 
-
-
-
 ## Installation
+
 <!-- Try it -->
 
-- Clone this repository: 
+- Clone this repository:
 
         git@github.com:AdrianaP00/Seat-Code-Kata.git
 
-- Inizialize the project: 
+- Inizialize the project:
 
         npm install --save
         npm run start
 
-- Test command: 
+- Test command:
 
         npm run test
-        
-- Docker command: 
+
+
+- Docker command:
 
          npm run docker
-        
+
+
 ---
+
 <!-- Tested on -->
 
 ### Tested on:
@@ -93,15 +97,15 @@ Output Test Case #2:
 
 ### Built With
 
-* [![Node][Node]][Node-url]
-* [![Docker][Docker]][Docker-url]
-
+- [![Node][Node]][Node-url]
+- [![Docker][Docker]][Docker-url]
 
 ### Shell output
 
 ![Example](.github/img/output.png)
 
 ## Discover more about this project in my SOLUTION.md :boom:
+
 [CLICK ME!](https://github.com/AdrianaP00/Seat-Code-Kata/blob/main/SOLUTION.md)
 
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -109,9 +113,6 @@ Output Test Case #2:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [Node]: https://img.shields.io/badge/Node-v.20-green
-
 [Node-url]: https://nodejs.org
-
 [Docker]: https://img.shields.io/badge/Docker-v.20.10.12-blue
-
 [Docker-url]: https://docker.com
