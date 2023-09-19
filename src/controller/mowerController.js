@@ -43,7 +43,7 @@ function main() {
     const [finalX, finalY, finalDirection] = moveMower(instructions, plateau);
 
     // Set the mower position and direction in the plateau
-    addMowerPosition(plateau, finalX, finalY, finalDirection);
+    addMowerPosition(plateau, finalX, finalY);
 
     // Print the final position of the mower
     console.log(

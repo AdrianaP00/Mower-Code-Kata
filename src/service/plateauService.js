@@ -13,15 +13,14 @@ const addRandomObstacles = (plateau) => {
 };
 
 // Add the mower's position to plateau
-const addMowerPosition = (plateau, x, y, direction) => {
-  plateau.mowerPositions.push({ plateau, x, y, direction });
+const addMowerPosition = ( plateau, x, y ) => {
+  plateau.mowerPositions.push({ x, y });
 };
-const mowerWithCollisionDetection = (plateau, dx, dy) => {
-  plateau.mowerPositions.includes({ dx, dy }) ? true : false;
+const mowerWithCollisionDetection = (plateau, x, y) => {
+  return plateau.mowerPositions.some((position) => position.x === x && position.y === y);
 };
-
 const mowerWithObstacleDetection = (plateau, dx, dy) => {
-  plateau.obstaclesPositions.includes({ dx, dy }) ? true : false;
+  return plateau.obstaclesPositions.some((position) => position.x === dx && position.y === dy);
 };
 
 module.exports = { addRandomObstacles, addMowerPosition, mowerWithCollisionDetection, mowerWithObstacleDetection };

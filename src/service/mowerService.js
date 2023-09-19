@@ -1,8 +1,8 @@
-const { mower } = require("../model/mowerModel");
-const { mowerWithCollisionDetection, mowerWithObstacleDetection } = require("../service/plateauService");
-
-// Definition of variables for grid
-const directions = { N: [0, 1], E: [1, 0], S: [0, -1], W: [-1, 0] };
+const { mower, directions } = require("../model/mowerModel");
+const {
+  mowerWithCollisionDetection,
+  mowerWithObstacleDetection,
+} = require("../service/plateauService");
 
 // Function to process mower instructions
 const moveMower = (instructions, plateau) => {
@@ -48,7 +48,7 @@ const checkAndMove = (plateau) => {
   dy = parseInt(mower.y) + parseInt(dy);
 
   if (canMove(dx, dy, plateau)) {
-    mower.move(dx, dy);
+    mower.move();
 
     return;
   } else {

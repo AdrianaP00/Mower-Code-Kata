@@ -1,3 +1,6 @@
+// Definition of variables for grid
+const directions = { N: [0, 1], E: [1, 0], S: [0, -1], W: [-1, 0] };
+
 let mower = {
   x: 0,
   y: 0,
@@ -24,18 +27,9 @@ let mower = {
     }
   },
 
-   // Function to turn the mower left
+  // Function to turn the mower left
   turnRight: function () {
     switch (this.direction) {
-      case "N":
-        this.direction = "W";
-        break;
-      case "E":
-        this.direction = "N";
-        break;
-      case "S":
-        this.direction = "E";
-        break;
       case "N":
         this.direction = "E";
         break;
@@ -54,21 +48,22 @@ let mower = {
   },
 
   // Function to move the mower
-  move: function (dx, dy) {
-    this.x = dx;
-    this.y = dy;
+  move: function () {
+    let [dx, dy] = directions[mower.direction];
+    this.x = parseInt(this.x) + parseInt(dx);
+    this.y = parseInt(this.y) + parseInt(dy);
   },
 
-// Function to turn off the helix
+  // Function to turn off the helix
   helixOff: function () {
     this.helixStatus = false;
     console.log("Helix is off.");
   },
-// Function to turn on the helix
+  // Function to turn on the helix
   helixOn: function () {
     this.helixStatus = true;
     console.log("Helix is on.");
   },
 };
 
-module.exports = { mower };
+module.exports = { mower, directions };
